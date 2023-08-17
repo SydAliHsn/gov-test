@@ -38,6 +38,8 @@ const screenshot = async (url: string) => {
     const getOptions = async () => {
       const executablePath = await chrome.executablePath;
 
+      console.log(exePath);
+
       let options: Options;
       if (!executablePath) {
         options = {
