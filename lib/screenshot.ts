@@ -1,4 +1,4 @@
-import puppeteer from 'puppeteer';
+import puppeteer, { Browser } from 'puppeteer';
 import path from 'path';
 
 import { generateFileName } from './utils';

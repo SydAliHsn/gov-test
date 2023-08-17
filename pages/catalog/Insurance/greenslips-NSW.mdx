@@ -1,5 +1,5 @@
 import { useSSG } from 'nextra/ssg';
-import screenshot from '../../../lib/screenshot';
+import screenshot from '../../../lib/screenshot'; import Image from 'next/image';
 
 export const getStaticProps = () => {
 const url = 'https://www.greenslips.nsw.gov.au/'
@@ -12,7 +12,7 @@ props: { ssg: {imageUrl} },
 export const ScreenshotImage = () => {
 const {imageUrl} = useSSG();
 
-return <img src={imageUrl} alt="screenshot"/>
+return <div className="w-full aspect-video relative mt-8"><Image src={imageUrl} fill={true} alt="" /></div>
 }
 
 # Greenslips NSW
