@@ -12,6 +12,8 @@ const screenshot = async (url: string) => {
   await page.screenshot({ path: path.join(process.cwd(), `/public/screenshots/ali.jpg`) });
 
   await browser.close();
+
+  return '/public/screenshots/ali.jpg';
 };
 
 export default screenshot;
