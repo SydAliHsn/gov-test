@@ -10,7 +10,7 @@ const screenshot = async (url: string) => {
   const page = await browser.newPage();
 
   await page.goto(url);
-  page.setViewport({ height: 1366, width: 768 });
+  page.setViewport({ width: 1366, height: 768, deviceScaleFactor: 0.75 });
 
   const fileName = generateFileName(url) + '.jpg';
 
