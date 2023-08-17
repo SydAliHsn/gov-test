@@ -1,22 +1,3 @@
-import { useSSG } from 'nextra/ssg';
-import ImageLink from '../../../components/ImageLink';
-import screenshot from '../../../lib/screenshot';
-
-export const getStaticProps = () => {
-const url = 'https://recovery.serviceconnect.gov.au/'
-
-return screenshot(url).then((image) => ({
-props: { ssg: {image} },
-}))
-};
-
-export const Imgi = () => {
-
-const {image} = useSSG();
-
-return <ImageLink url={image} />
-}
-
 # Recovery Connect
 
 ### About
@@ -30,5 +11,3 @@ Australian Government.
 ### Link(s)
 
 [https://recovery.serviceconnect.gov.au/](https://recovery.serviceconnect.gov.au/)
-
-<Imgi />

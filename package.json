@@ -18,14 +18,14 @@
   },
   "homepage": "https://github.com/shuding/nextra-docs-template#readme",
   "dependencies": {
-    "chrome-aws-lambda": "^10.1.0",
     "next": "^13.0.6",
     "nextra": "latest",
     "nextra-theme-docs": "latest",
-    "playwright-aws-lambda": "^0.10.0",
     "playwright-core": "^1.37.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
+    "puppeteer": "^21.0.3"
   },
   "devDependencies": {
     "@types/node": "18.11.10",

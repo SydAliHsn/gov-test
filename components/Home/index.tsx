@@ -1,9 +1,13 @@
 import React from 'react';
 import Hero from './Hero';
+import Tutorial from './Tutorial';
+import Suggest from './Suggest';
 
 const Home = (props: {}): JSX.Element => {
-    return <main>
+    return <main className='space-y-12 sm:space-y-20 gradient-bg '>
         <Hero />
+        <Tutorial />
+        <Suggest />
     </main>
 };
 
