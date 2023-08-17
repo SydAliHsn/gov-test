@@ -1,0 +1,34 @@
+import { useSSG } from 'nextra/ssg';
+import ImageLink from '../../../components/ImageLink';
+import screenshot from '../../../lib/screenshot';
+
+export const getStaticProps = () => {
+const url = 'https://recovery.serviceconnect.gov.au/'
+
+return screenshot(url).then((image) => ({
+props: { ssg: {image} },
+}))
+};
+
+export const Imgi = () => {
+
+const {image} = useSSG();
+
+return <ImageLink url={image} />
+}
+
+# Recovery Connect
+
+### About
+
+Recovery Connect brings together services and supports from charities, organisations and government directly to you. This assistance helps people prepare for and recover from disasters and major natural events.
+
+### Operated by
+
+Australian Government.
+
+### Link(s)
+
+[https://recovery.serviceconnect.gov.au/](https://recovery.serviceconnect.gov.au/)
+
+<Imgi />

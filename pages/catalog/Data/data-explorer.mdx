@@ -1,0 +1,34 @@
+import { useSSG } from 'nextra/ssg';
+import ImageLink from '../../../components/ImageLink';
+import screenshot from '../../../lib/screenshot';
+
+export const getStaticProps = () => {
+const url = 'https://www.myschool.edu.au'
+
+return screenshot(url).then((image) => ({
+props: { ssg: {image} },
+}))
+};
+
+export const Imgi = () => {
+
+const {image} = useSSG();
+
+return <ImageLink url={image} />
+}
+
+# Data Explorer
+
+### About
+
+My School supports national transparency and accountability of Australia's schools by publishing nationally consistent school-level data about every school in Australia.
+
+### Operated by
+
+Australian Curriculum, Assessment and Reporting Authority(ACARA)
+
+### Link(s)
+
+<Imgi />
+
+[https://www.myschool.edu.au/](https://www.myschool.edu.au/)

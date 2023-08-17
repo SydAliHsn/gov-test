@@ -1,7 +1,18 @@
 {
-  "index": "Introduction",
+  "index": {
+    "type": "page",
+    "title": "GovSites",
+    "display": "hidden",
+    "theme": {
+      "layout": "raw"
+    }
+  },
   "about": {
     "title": "About",
+    "type": "page"
+  },
+  "catalog": {
+    "title": "Catalog",
     "type": "page"
   },
   "contact": {
