@@ -13,7 +13,7 @@ const screenshot = async (url: string) => {
 
   await browser.close();
 
-  return '/public/screenshots/ali.jpg';
+  return '/screenshots/ali.jpg';
 };
 
 export default screenshot;
