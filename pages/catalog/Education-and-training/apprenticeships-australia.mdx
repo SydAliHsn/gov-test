@@ -1,3 +1,20 @@
+import { useSSG } from 'nextra/ssg';
+import screenshot from '../../../lib/screenshot';
+
+export const getStaticProps = () => {
+const url = 'https://www.apprenticeships.gov.au/'
+
+return screenshot(url).then((imageUrl) => ({
+props: { ssg: {imageUrl} },
+}))
+};
+
+export const ScreenshotImage = () => {
+const {imageUrl} = useSSG();
+
+return <img src={imageUrl} alt="screenshot"/>
+}
+
 # Australian Apprenticeships
 
 ### About
@@ -11,3 +28,7 @@ Department of Employment & Workplace Relations
 ### Link(s)
 
 [https://www.apprenticeships.gov.au/](https://www.apprenticeships.gov.au/)
+
+### Screenshot
+
+<ScreenshotImage />

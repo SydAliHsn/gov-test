@@ -1,3 +1,20 @@
+import { useSSG } from 'nextra/ssg';
+import screenshot from '../../../lib/screenshot';
+
+export const getStaticProps = () => {
+const url = 'https://www.myschool.edu.au/'
+
+return screenshot(url).then((imageUrl) => ({
+props: { ssg: {imageUrl} },
+}))
+};
+
+export const ScreenshotImage = () => {
+const {imageUrl} = useSSG();
+
+return <img src={imageUrl} alt="screenshot"/>
+}
+
 # My School
 
 ### About
@@ -11,3 +28,7 @@ Australian Curriculum, Assessment and Reporting Authority (ACARA)
 ### Link(s)
 
 [https://www.myschool.edu.au/](https://www.myschool.edu.au/)
+
+### Screenshot
+
+<ScreenshotImage />

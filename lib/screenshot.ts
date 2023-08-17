@@ -4,25 +4,35 @@ import path from 'path';
 import { generateFileName } from './utils';
 
 const screenshot = async (url: string) => {
-  const browser = await puppeteer.launch({
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  });
-  const page = await browser.newPage();
+  let browser;
+  let fileName;
 
-  await page.goto(url);
-  page.setViewport({ width: 1366, height: 768, deviceScaleFactor: 0.75 });
+  try {
+    browser = await puppeteer.launch({
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
 
-  const fileName = generateFileName(url) + '.jpg';
+    // const screenshotPromises = urls.map(async url => {
+    const page = await browser.newPage();
+    await page.goto(url, { timeout: 60 * 1000 });
 
-  await page.screenshot({
-    path: path.join(process.cwd(), `/public/screenshots/${fileName}`),
-    type: 'jpeg',
-    quality: 50,
-  });
+    page.setViewport({ width: 1366, height: 768 });
 
-  await browser.close();
+    fileName = generateFileName(url) + '.webp';
 
-  return `/screenshots/${fileName}`;
+    await page.screenshot({
+      path: path.join(process.cwd(), `/public/screenshots/${fileName}`),
+      type: 'webp',
+      quality: 40,
+    });
+  } catch (err) {
+    console.log(`Error taking screenshot.`, err);
+  } finally {
+    await browser.close();
+
+    return `/screenshots/${fileName}`;
+  }
 };
 
 export default screenshot;

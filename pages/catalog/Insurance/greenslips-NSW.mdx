@@ -1,3 +1,20 @@
+import { useSSG } from 'nextra/ssg';
+import screenshot from '../../../lib/screenshot';
+
+export const getStaticProps = () => {
+const url = 'https://www.greenslips.nsw.gov.au/'
+
+return screenshot(url).then((imageUrl) => ({
+props: { ssg: {imageUrl} },
+}))
+};
+
+export const ScreenshotImage = () => {
+const {imageUrl} = useSSG();
+
+return <img src={imageUrl} alt="screenshot"/>
+}
+
 # Greenslips NSW
 
 ### About
@@ -11,3 +28,7 @@ State Insurance Regulatory Authority, NSW Government.
 ### Link(s)
 
 [https://www.greenslips.nsw.gov.au/](https://www.greenslips.nsw.gov.au/)
+
+### Screenshot
+
+<ScreenshotImage />

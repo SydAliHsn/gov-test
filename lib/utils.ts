@@ -13,3 +13,5 @@ export function generateFileName(url: string, maxLength: number = 50): string {
 
   return niceFileName;
 }
+
+// const ssgScreenshot => (url)  {}

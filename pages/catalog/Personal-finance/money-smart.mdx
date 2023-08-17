@@ -1,3 +1,20 @@
+import { useSSG } from 'nextra/ssg';
+import screenshot from '../../../lib/screenshot';
+
+export const getStaticProps = () => {
+const url = 'https://moneysmart.gov.au/'
+
+return screenshot(url).then((imageUrl) => ({
+props: { ssg: {imageUrl} },
+}))
+};
+
+export const ScreenshotImage = () => {
+const {imageUrl} = useSSG();
+
+return <img src={imageUrl} alt="screenshot"/>
+}
+
 # Money Smart
 
 ### About
@@ -11,3 +28,7 @@ Australian Securities and Investments Commission (ASIC)
 ### Link(s)
 
 [https://moneysmart.gov.au/](https://moneysmart.gov.au/)
+
+### Screenshot
+
+<ScreenshotImage />

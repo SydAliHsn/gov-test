@@ -1,3 +1,20 @@
+import { useSSG } from 'nextra/ssg';
+import screenshot from '../../../lib/screenshot';
+
+export const getStaticProps = () => {
+const url = 'https://www.healthdirect.gov.au/'
+
+return screenshot(url).then((imageUrl) => ({
+props: { ssg: {imageUrl} },
+}))
+};
+
+export const ScreenshotImage = () => {
+const {imageUrl} = useSSG();
+
+return <img src={imageUrl} alt="screenshot"/>
+}
+
 # Health Direct
 
 ### About
@@ -11,3 +28,7 @@ Australian government.
 ### Link(s)
 
 [https://www.healthdirect.gov.au/](https://www.healthdirect.gov.au/)
+
+### Screenshot
+
+<ScreenshotImage />

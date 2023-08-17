@@ -1,3 +1,20 @@
+import { useSSG } from 'nextra/ssg';
+import screenshot from '../../../lib/screenshot';
+
+export const getStaticProps = () => {
+const url = 'https://headtohealth.gov.au/'
+
+return screenshot(url).then((imageUrl) => ({
+props: { ssg: {imageUrl} },
+}))
+};
+
+export const ScreenshotImage = () => {
+const {imageUrl} = useSSG();
+
+return <img src={imageUrl} alt="screenshot"/>
+}
+
 # Head to health
 
 ### About
@@ -11,3 +28,7 @@ Department of Health
 ### Link(s)
 
 [https://www.headtohealth.gov.au/](https://www.headtohealth.gov.au/)
+
+### Screenshot
+
+<ScreenshotImage />
