@@ -11,11 +11,12 @@ props: { ssg: {image} },
 };
 
 export const Imgi = () => {
-
 const {image} = useSSG();
 
 return <ImageLink url={image} />
 }
+
+{/* Actual Content of the page */}
 
 # Data Explorer
 
@@ -31,4 +32,4 @@ Australian Curriculum, Assessment and Reporting Authority(ACARA)
 
 <Imgi />
 
-[https://www.myschool.edu.au/](https://www.myschool.edu.au/)
+{/* End Actual Content of the page */}
