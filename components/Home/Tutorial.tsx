@@ -14,9 +14,9 @@ const Tutorial = (props: {}): JSX.Element => {
                 Simply browse from the menu or press <CodeBlock>command / ctrl + k</CodeBlock > to go to the search bar.
             </p>
 
-            <p className='sm:text-lg md:text-xl font-medium text-gray-800 dark:text-gray-300'>Or</p>
+            {/* <p className='sm:text-lg md:text-xl font-medium text-gray-800 dark:text-gray-300'>Or</p>
 
-            <p className='sm:text-lg md:text-xl'>Go to the <CodeBlock><Link href={'/catalog'} className='text-blue-500'>/catalog</Link></CodeBlock> page and browse from the sidebar.</p>
+            <p className='sm:text-lg md:text-xl'>Go to the <CodeBlock><Link href={'/catalog'} className='text-blue-500'>/catalog</Link></CodeBlock> page and browse from the sidebar.</p> */}
 
         </div>
     </div>;
