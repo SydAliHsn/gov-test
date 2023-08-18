@@ -3,50 +3,52 @@ import Link from 'next/link'
 import {readDirectory} from '../../lib/utils'
 
 export const getStaticProps = ({ params }) => {
-  const folderPath = './pages/catalog';
+  const folderPath = 'pages/catalog';
   // Function to recursively read directories and files from a folder
 const itemsList = readDirectory(folderPath);
 
 return { props: { ssg: { itemsList } } }
 };
 
-export const Table = () => {
+export const List = () => {
 const { itemsList } = useData();
 
 const formatName = (name, separator = '-') => {
 return name.split(separator).map(el => el[0].toUpperCase() + el.slice(1)).join(' ').split('.')[0]
 }
 
-const foldersTable = Object.keys(itemsList).map(folderName => {
+const foldersList = Object.keys(itemsList).map(folderName => {
 
-if(!itemsList[folderName].files) return null
+const files = itemsList[folderName].files;
 
-return <div>
+if(!files) return null
 
-<h4>{formatName(folderName, '-')}</h4>
+return (
 
-<ul className="opacity-[93] pl-4">
-  {itemsList[folderName].files.map(file => {
-    return (
-      <li
-        key={file}
-        className="underline underline-offset-2"
-      >
-        <Link href={`/catalog/${folderName}/${file.split('.')[0]}`}> {formatName(file)}</Link>
-      </li>
-    );
-  })}
-</ul>
+  <div>
+    <h4>{formatName(folderName)}</h4>
 
-</div>
+    <ul className="opacity-[93] pl-4">
+      {files.map(file => {
+        return (
+          <li
+            key={file}
+            className="underline underline-offset-2"
+          >
+            <Link href={`/catalog/${folderName}/${file.split('.')[0]}`}> {formatName(file)}</Link>
+          </li>
+        );
+      })}
+    </ul>
+
+</div>)
 })
 
-return foldersTable;
-
+return foldersList;
 };
 
 # Catalog
 
 GovSites has a complete catalog of all the Authentic Australian Government Websites.
 
-<Table />
+<List />
