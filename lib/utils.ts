@@ -1,4 +1,4 @@
-import fs from 'fs';
+const fs = require('fs');
 import path from 'path';
 
 export function generateFileName(url: string, maxLength: number = 50): string {
@@ -38,4 +38,12 @@ export function readDirectory(dirPath: string) {
   }
 
   return result;
+}
+export async function checkFileExists(path: string) {
+  try {
+    await fs.promises.access(path, fs.constants.F_OK);
+    return true;
+  } catch (error) {
+    return false;
+  }
 }

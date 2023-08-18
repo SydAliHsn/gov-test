@@ -1,11 +1,19 @@
-import puppeteer, { Browser } from 'puppeteer';
 import path from 'path';
+import puppeteer from 'puppeteer';
+import { checkFileExists } from './utils';
 
 import { generateFileName } from './utils';
 
 const screenshot = async (url: string) => {
   let browser;
-  let fileName;
+  const fileName = generateFileName(url) + '.webp';
+  const filePath = path.join(process.cwd(), `/public/screenshots/${fileName}`);
+
+  const fileAlreadyExists = await checkFileExists(filePath);
+
+  if (process.env.NODE_ENV === 'development') {
+    if (fileAlreadyExists) return `/screenshots/${fileName}`;
+  }
 
   try {
     browser = await puppeteer.launch({
@@ -19,10 +27,8 @@ const screenshot = async (url: string) => {
 
     page.setViewport({ width: 1366, height: 768 });
 
-    fileName = generateFileName(url) + '.webp';
-
     await page.screenshot({
-      path: path.join(process.cwd(), `/public/screenshots/${fileName}`),
+      path: filePath,
       type: 'webp',
       quality: 40,
     });
