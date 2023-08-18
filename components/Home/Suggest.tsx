@@ -5,7 +5,7 @@ import { BsTwitter } from 'react-icons/bs'
 
 
 const Suggest = (props: {}): JSX.Element => {
-    return <div className='container mx-auto px-4 lg:!max-w-4xl xl:!max-w-5xl pb-16'>
+    return <div className='container mx-auto px-4 lg:!max-w-4xl xl:!max-w-5xl'>
         <div className='flex flex-col gap-6 sm:gap-8 lg:gap-10'>
             <h2 className='text-2xl sm:text-3xl lg:text-4xl font-bold'>
                 I'd like to Suggest a Website or Service.

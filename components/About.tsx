@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = (props: {}): JSX.Element => {
     return <div className='pt-10 flex flex-col gap-8'>
-        <h1 className='sm:text-center text-4xl xs:text-5xl font-bold'>About Govsites</h1>
+        <h1 className='sm:text-center text-4xl sm:text-5xl font-bold'>About Govsites</h1>
         <p className='text-lg leading-8 pt-5'>In an era dominated by digital information, GovSites emerges as a vital tool, streamlining the journey to essential government services. </p>
 
         <p className='text-lg leading-8'>Our platform serves as a dedicated hub, meticulously curating verified government websites and services, providing users with a trustworthy gateway to accurate information. We understand the complexities individuals face while navigating official channels, and GovSites was designed to empower citizens with a seamless, secure, and user-centric experience.</p>
