@@ -1,5 +1,6 @@
 import { useSSG } from 'nextra/ssg';
-import screenshot from '../../../lib/screenshot'; import Image from 'next/image';
+import screenshot from '../../../lib/screenshot';
+import ScreenshotImage from '../../../components/ScreenshotImage';
 
 export const getStaticProps = () => {
 const url = 'https://www.apprenticeships.gov.au/'
@@ -9,10 +10,10 @@ props: { ssg: {imageUrl} },
 }))
 };
 
-export const ScreenshotImage = () => {
+export const Screenshot = () => {
 const {imageUrl} = useSSG();
 
-return <div className="w-full aspect-video relative mt-8"><Image src={imageUrl} fill={true} alt="" /></div>
+return <ScreenshotImage imageUrl={imageUrl}/>
 }
 
 # Australian Apprenticeships
@@ -31,4 +32,4 @@ Department of Employment & Workplace Relations
 
 ### Screenshot
 
-<ScreenshotImage />
+<Screenshot />
