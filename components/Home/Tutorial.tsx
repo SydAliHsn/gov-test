@@ -22,7 +22,7 @@ const Tutorial = (props: {}): JSX.Element => {
         </div>
 
         {/* Small Gradient Background */}
-        <div className="-z-10 absolute top-30 left-0 h-[22rem] w-16 dark:w-10 bg-indigo-500 blur-[100px] -rotate-45 opacity-80 dark:opacity-60"></div>
+        <div className="-z-10 absolute top-30 left-0 h-[22rem] w-16 dark:w-10 bg-indigo-500 blur-[100px] -rotate-45 opacity-70 dark:opacity-60"></div>
         {/* Gradient */}
     </div>;
 };
