@@ -5,6 +5,7 @@ const config: DocsThemeConfig = {
   logo: <span style={{ fontSize: '1.75rem', fontWeight: '600' }}> Govsites</ span>,
   project: {
     link: "https://github.com/capex/govsites",
+
   },
   chat: {
     link: "https://discord.com",
@@ -15,7 +16,7 @@ const config: DocsThemeConfig = {
   },
   editLink: {
     text: "Edit this page on Github",
-  }
+  },
 };
 
 export default config;
