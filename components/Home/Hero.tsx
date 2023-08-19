@@ -4,8 +4,10 @@ import Link from 'next/link';
 
 const Hero = (props: {}): JSX.Element => {
 
+    const gradientBgCommonClasses = "-z-10 absolute h-[25rem] w-32 dark:w-20 bg-blue-500 blur-[60px] -rotate-45 opacity-[0.37] dark:opacity-25"
 
-    return <div className='container mx-auto px-4 lg:px-0 pb-20 pt-28 md:pt-36'>
+
+    return <div className='container mx-auto px-4 lg:px-0 pb-20 pt-28 md:pt-36 relative'>
         <div className='flex flex-col items-center justify-center gap-6 sm:gap-8 lg:gap-10 text-center'>
             <h1 className='max-w-7xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold capitalize'>
                 A directory of
@@ -19,6 +21,13 @@ const Hero = (props: {}): JSX.Element => {
             <Link className='bg-gradient-to-r from-purple-500 to-indigo-600 py-3 px-6 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 ease-in-out text-white font-semibold text-lg' href={'/catalog'}>Explore All Sites</Link>
             {/* </div> */}
         </div>
+
+        {/* Small Gradient Background */}
+        <div className={`${gradientBgCommonClasses} top-0 right-[70%]`}></div>
+        <div className={`${gradientBgCommonClasses} top-80 left-[90%] rotate-45`}></div>
+        {/* Gradient */}
+
+
     </div>;
 };
 

@@ -4,7 +4,8 @@ import Link from 'next/link';
 import CodeBlock from '../CodeBlock';
 
 const Tutorial = (props: {}): JSX.Element => {
-    return <div className='container mx-auto px-4 lg:!max-w-4xl xl:!max-w-5xl'>
+    return <div className='container mx-auto px-4 lg:!max-w-4xl xl:!max-w-5xl relative'>
+
         <div className='flex flex-col gap-6 sm:gap-8 lg:gap-10'>
             <h2 className='text-2xl sm:text-3xl lg:text-4xl font-bold'>
                 How do I find a Website or Service?
@@ -19,6 +20,10 @@ const Tutorial = (props: {}): JSX.Element => {
             </p>
 
         </div>
+
+        {/* Small Gradient Background */}
+        <div className="-z-10 absolute top-30 left-0 h-[22rem] w-16 dark:w-10 bg-indigo-500 blur-[100px] -rotate-45 dark:opacity-60"></div>
+        {/* Gradient */}
     </div>;
 };
 

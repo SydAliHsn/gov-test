@@ -4,7 +4,7 @@ import Tutorial from './Tutorial';
 import Suggest from './Suggest';
 
 const Home = (props: {}): JSX.Element => {
-    return <main className='space-y-12 sm:space-y-32 gradient-bg pb-16'>
+    return <main className='space-y-12 sm:space-y-32 pb-16'>
         <Hero />
 
         <Tutorial />
