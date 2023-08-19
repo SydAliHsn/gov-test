@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://govsites.com.au
+
+# Sitemaps
+Sitemap: https://govsites.com.au/sitemap.xml
